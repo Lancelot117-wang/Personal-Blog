@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/new.css">
+</head>
+<body>
+<nav th:replace="_fragments :: menu(0)" class="ui inverted attached segment n-padded-tb-mini n-shadow-small">
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui teal header item">Blog</h2>
+            <a href="#" class="n-item item n-mobile-hide"><i class="home icon"></i>Homepage</a>
+            <a href="#" class="n-item item n-mobile-hide"><i class="idea icon"></i>Group</a>
+            <a href="#" class="n-item item n-mobile-hide"><i class="tags icon"></i>Label</a>
+            <a href="#" class="n-item item n-mobile-hide"><i class="clone icon"></i>Clone</a>
+            <a href="#" class="n-item item n-mobile-hide"><i class="info icon"></i>About Me</a>
+            <div class="right item n-mobile-hide">
+                <div class="ui icon inverted transparent input">
+                    <input type="text" placeholder="Search...">
+                    <i class="search link icon"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button n-top-right n-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="n-container-small n-padded-tb-massive">
+    <div class="ui error message n-padded-tb-huge">
+        <div class="ui container">
+            <h2>Error</h2>
+            <p>Sorry, the service has a problem, please contact the administrator.</p>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<footer th:fragment="footer" class="ui inverted vertical segment n-padded-tb-massive">
+    <div class="ui center aligned container">
+        <div class="ui inverted divided stackable grid">
+            <div class="three wide column">
+                <div class="ui inverted link list">
+                    <div class="item">
+                        <img src="../static/images/QR.png" th:src="@{/static/images/QR.png}"  class="ui rounded image" alt="" style="width: 120px">
+                    </div>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header n-text-thin n-text-spaced " >Latest</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item n-text-thin">User Story</a>
+                    <a href="#" class="item n-text-thin">User Story</a>
+                    <a href="#" class="item n-text-thin">User Story</a>
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header n-text-thin n-text-spaced">Contact</h4>
+                <div class="ui inverted link list">
+                    <a href="#" class="item">Email: junhanwang@umass.edu</a>
+                    <a href="#" class="item">Phone: 413-404-4779</a>
+                </div>
+            </div>
+            <div class="seven wide column">
+                <h4 class="ui inverted header n-text-thin n-text-spaced ">Blog</h4>
+                <p class="n-text-thin n-text-spaced n-opacity-mini">This is my personal blog. I will share content about programming and gaming. I hope this may help someone who come here.</p>
+            </div>
+        </div>
+        <div class="ui inverted section divider"></div>
+        <p class="n-text-thin n-text-spaced n-opacity-tiny">Copyright © 2020 Junhan Wang All Rights Reserved</p>
+    </div>
+
+</footer>
+</body>
+</html>

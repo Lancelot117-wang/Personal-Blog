@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Content</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/new.css">
+    <link rel="stylesheet" href="../static/css/typo.css">
+    <link rel="stylesheet" href="../static/lib/prism/prism.css">
+    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css">
+</head>
+<body>
+    <nav th:replace="_fragments :: menu(1)" class="ui inverted attached segment n-padded-tb-mini n-shadow-small">
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui teal header item">Blog</h2>
+                <a href="#" class="n-item item n-mobile-hide"><i class="home icon"></i>Homepage</a>
+                <a href="#" class="n-item item n-mobile-hide"><i class="idea icon"></i>Group</a>
+                <a href="#" class="n-item item n-mobile-hide"><i class="tags icon"></i>Label</a>
+                <a href="#" class="n-item item n-mobile-hide"><i class="clone icon"></i>Clone</a>
+                <a href="#" class="n-item item n-mobile-hide"><i class="info icon"></i>About Me</a>
+                <div class="right item n-mobile-hide">
+                    <div class="ui icon inverted transparent input">
+                        <input type="text" placeholder="Search...">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button n-top-right n-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+
+    <div id="waypoint" class="n-container-small n-padded-tb-large">
+        <div class="ui container">
+            <div class="ui top attached segment">
+                <div class="ui horizontal link list">
+                    <div class="item">
+                        <img src="https://unsplash.it/100/100?image=1005" th:src="@{${blog.user.avatar}}" alt="" class="ui avatar image">
+                        <div class="content">
+                            <a href="#" class="header" th:text="${blog.user.nickname}">
+                                Junhan Wang
+                            </a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <i class="calender icon"></i><span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020-05-07</span>
+                    </div>
+                    <div class="item">
+                        <i class="eye icon"></i><span th:text="${blog.views}">475</span>
+                    </div>
+                </div>
+            </div>
+            <div class="ui attached segment">
+                <img src="https://unsplash.it/800/450?image=1005" th:src="@{${blog.firstPicture}}" alt="" class="ui fluid image">
+            </div>
+            <div class="ui attached padded segment">
+                <div class="ui right aligned basic segment">
+                    <div class="ui orange basic label" th:text="${blog.flag}">Original</div>
+                </div>
+
+                <h2 class="ui center aligned header" th:text="${blog.title}">About Exercise</h2>
+
+                <div id="content" class="typo typo-selection js-toc-content n-padded-lr-responsive n-padded-tb-large" th:utext="${blog.content}">
+                    <p>
+                        XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX XXXX
+                    </p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h1>title1</h1>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h2>title2</h2>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h3>title3</h3>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+
+                <!--tag-->
+                <div class="n-padded-lr-responsive n-padded-tb-large">
+                    <div class="ui basic teal left pointing label" th:each="tag : ${blog.tags}" th:text="${tag.name}">method</div>
+                </div>
+
+                <!--praise-->
+                <div th:if="${blog.praise}">
+                    <div class="ui center aligned basic segment">
+                        <button id="praiseButton" class="ui orange basic circular button">Praise</button>
+                    </div>
+                    <div class="ui praiseQR flowing popup transition hidden">
+                        <div class="ui orange basic label">
+                            <div class="ui images" style="font-size: inherit !important;">
+                                <div class="image">
+                                    <img src="../static/images/QR.png" th:src="@{/static/images/QR.png}" alt="" class="ui rounded bordered image" style="width: 120px">
+                                    <div>Wechat</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="ui attached positive message" th:if="${blog.share}">
+                <div class="ui middle aligned grid">
+                    <div class="eleven wide column">
+                        <ui class="list">
+                            <li>Author: <span th:text="${blog.user.nickname}">Junhan Wang </span><a href="#" th:href="@{/about}" target="_blank">(contact)</a></li>
+                            <li>Time: <span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm')}">2020-05-08</span></li>
+                            <li>Copyright Hold</li>
+                            <li>Forward</li>
+                        </ui>
+                    </div>
+                    <div class="five wide column">
+                        <img src="../static/images/QR.png" th:src="@{/static/images/QR.png}" alt="" class="ui right floated rounded bordered image" style="width: 110px">
+                    </div>
+                </div>
+            </div>
+            <div class="ui bottom attached segment" th:if="${blog.comment}">
+                <!--list of comments-->
+                <div id="comment-container" class="ui teal segment">
+                    <div th:fragment="commentList">
+                        <div class="ui threaded comments" style="max-width: 100%;">
+                        <h3 class="ui dividing header">Comments</h3>
+                        <div class="comment" th:each="comment : ${comments}">
+                            <a class="avatar">
+                                <img src="https://unsplash.it/100/100?image=1005" th:src="@{${comment.avatar}}">
+                            </a>
+                            <div class="content">
+                                <a class="author">
+                                    <span th:text="${comment.nickname}">Matt</span>
+                                    <div class="ui mini basic teal left pointing label n-padded-mini" th:if="${comment.adminComment}">Author</div>
+                                </a>
+                                <div class="metadata">
+                                    <span class="date" th:text="${#dates.format(comment.createTime,'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
+                                </div>
+                                <div class="text" th:text="${comment.content}">
+                                    How artistic!
+                                </div>
+                                <div class="actions">
+                                    <a class="reply" data-commentid="1" data-commentnickname="Matt" th:attr="data-commentid=${comment.id},data-commentnickname=${comment.nickname}" onclick="reply(this)">Reply</a>
+                                </div>
+                            </div>
+                            <div class="comments" th:if="${#arrays.length(comment.replyComments)}>0">
+                                <div class="comment" th:each="reply : ${comment.replyComments}">
+                                    <a class="avatar">
+                                        <img src="https://unsplash.it/100/100?image=1005" th:src="@{${reply.avatar}}">
+                                    </a>
+                                    <div class="content">
+                                        <a class="author">
+                                            <span th:text="${reply.nickname}">Matt</span>
+                                            <div class="ui mini basic teal left pointing label n-padded-mini" th:if="${reply.adminComment}">Author</div>
+                                            &nbsp;<span th:text="|@ ${reply.parentComment.nickname}|" class="n-teal">Martin</span>
+                                        </a>
+                                        <div class="metadata">
+                                            <span class="date" th:text="${#dates.format(reply.createTime,'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
+                                        </div>
+                                        <div class="text" th:text="${reply.content}">
+                                            How artistic!
+                                        </div>
+                                        <div class="actions">
+                                            <a class="reply" data-commentid="1" data-commentnickname="Matt" th:attr="data-commentid=${reply.id},data-commentnickname=${reply.nickname}" onclick="reply(this)">Reply</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+
+                <div class="ui form">
+                    <input type="hidden" name="blog.id" th:value="${blog.id}">
+                    <input type="hidden" name="parentComment.id" value="-1">
+                    <div class="field">
+                        <textarea name="content" placeholder="Please type in comment"></textarea>
+                    </div>
+                    <div class="fields">
+                        <div class="field n-mobile-wide n-margin-bottom-small">
+                            <div class="ui left icon input ">
+                                <i class="user icon"></i>
+                                <input type="text" name="nickname" placeholder="Name" th:value="${session.user}!=null ? ${session.user.nickname}">
+                            </div>
+                        </div>
+                        <div class="field n-mobile-wide n-margin-bottom-small">
+                            <div class="ui left icon input">
+                                <i class="mail icon"></i>
+                                <input type="text" name="email" placeholder="Email" th:value="${session.user}!=null ? ${session.user.email}">
+                            </div>
+                        </div>
+                        <div class="field n-mobile-wide n-margin-bottom-small">
+                            <button id="comment-btn" type="button" class="ui teal button n-mobile-wide"><i class="edit icon"></i>Submit</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toolbar" class="n-padded n-fixed n-bottom-right" style="display: none">
+        <div class="ui vertical icon buttons">
+            <button type="button" class="ui toc teal button">Menu</button>
+            <a href="#comment-container" class="ui teal button">Comment</a>
+            <button class="ui wechat teal icon button"><i class="wechat icon"></i></button>
+            <div id="toTop-button" class="ui teal icon button"><i class="chevron up icon"></i></div>
+        </div>
+    </div>
+
+    <div class="ui toc-container flowing popup transition hidden" style="width: 250px;">
+        <ol class="js-toc">
+
+        </ol>
+    </div>
+
+    <div class="ui wechatQR flowing popup transition hidden" style="width: 130px">
+        <img src="../static/images/QR.png" class="ui rounded image" style="width: 120px"/>
+    </div>
+
+    <br>
+    <br>
+    <footer th:replace="_fragments :: footer" class="ui inverted vertical segment n-padded-tb-massive">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="../static/images/QR.png" class="ui rounded image" alt="" style="width: 120px">
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header n-text-thin n-text-spaced">Latest blog</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">User Story</a>
+                        <a href="#" class="item">User Story</a>
+                        <a href="#" class="item">User Story</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header n-text-thin n-text-spaced">Contact</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email: junhanwang@umass.edu</a>
+                        <a href="#" class="item">Phone: 413-404-4779</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header n-text-thin n-text-spaced">About</h4>
+                    <p class="n-opacity-mini">This is my personal blog. I will share content about programming and gaming. I hope this may help someone who come here.</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="n-text-thin n-text-spaced n-opacity-tiny">Copyright © 2020 Junhan Wang All Rights Reserved</p>
+        </div>
+    </footer>
+
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+<script src="../static/lib/prism/prism.js"></script>
+<script src="../static/lib/tocbot/tocbot.min.js"></script>
+<script src="../static/lib/waypoints/jquery.waypoints.min.js"></script>
+<!--/*/</th:block>/*/-->
+
+<script th:inline="javascript">
+    tocbot.init({
+        // Where to render the table of contents.
+        tocSelector: '.js-toc',
+        // Where to grab the headings to build the table of contents.
+        contentSelector: '.js-toc-content',
+        // Which headings to grab inside of the contentSelector element.
+        headingSelector: 'h1, h2, h3',
+        // For headings inside relative or absolute positioned containers within content.
+        hasInnerContainers: true,
+    });
+
+    $('.menu.toggle').click(function (){
+        $('.n-item').toggleClass('n-mobile-hide');
+    });
+
+    $('#praiseButton').popup({
+        popup: $('.praiseQR.popup'),
+        on: 'click',
+        position: 'bottom center'
+    });
+
+    $('.toc.button').popup({
+        popup: $('.toc-container.popup'),
+        on: 'click',
+        position: 'left center'
+    });
+
+    $('.wechat').popup({
+        popup: $('.wechatQR.popup'),
+        position: 'left center'
+    });
+
+    $('#toTop-button').click( function() {
+        $(window).scrollTo(0, 200);
+    });
+
+    var serurl = "localhost:8080";
+    var url = /*[[@{/blog/{id}(id=${blog.id})}]]*/"";
+
+    var waypoint = new Waypoint({
+        element: document.getElementById('waypoint'),
+        handler: function(direction) {
+            if(direction == 'down') {
+                $('#toolbar').show();
+            }
+            if(direction == 'up') {
+                $('#toolbar').hide(500);
+            }
+            console.log('Scrolled to waypoint!')
+        }
+    })
+
+    $('.ui.form').form({
+        fields:{
+            content: {
+                identifier: 'content',
+                rules: [{
+                    type: 'empty',
+                    prompt: 'Content: please input content'
+                }]
+            },
+            nickname: {
+                identifier: 'nickname',
+                rules: [{
+                    type: 'empty',
+                    prompt: 'nickname: please input nickname'
+                }]
+            },
+            email: {
+                identifier: 'email',
+                rules: [{
+                    type: 'email',
+                    prompt: 'email: please input email'
+                }]
+            }
+        }
+    });
+
+    $(function () {
+        $("#comment-container").load(/*[[@{/comments/{id}(id=${blog.id})}]]*/"comments/6");
+    });
+
+    $('#comment-btn').click(function () {
+        var boo = $('.ui.form').form('validate form');
+        if(boo) {
+            console.log('validation success');
+            postData();
+        } else {
+            console.log('validation failed');
+        }
+    });
+
+    function postData() {
+        $("#comment-container").load(/*[[@{/comments}]]*/"",{
+            "parentComment.id" : $("[name='parentComment.id']").val(),
+            "blog.id" : $("[name='blog.id']").val(),
+            "nickname": $("[name='nickname']").val(),
+            "email"   : $("[name='email']").val(),
+            "content" : $("[name='content']").val()
+        },function (responseTxt, statusTxt, xhr) {
+//        $(window).scrollTo($('#comment-container'),500);
+            clearContent();
+        });
+    }
+
+    function clearContent() {
+        $("[name='content']").val('');
+        $("[name='parentComment.id']").val(-1);
+        $("[name='content']").attr("placeholder", "please type in comment");
+    }
+
+    function reply(obj) {
+        var commentId = $(obj).data('commentid');
+        var commentNickname = $(obj).data('commentnickname');
+        $("[name='content']").attr("placeholder", "@"+commentNickname).focus();
+        $("[name='parentComment.id']").val(commentId);
+        $(window).scrollTo($('#comment-form'),500);
+    }
+</script>
+</body>
+</html>
