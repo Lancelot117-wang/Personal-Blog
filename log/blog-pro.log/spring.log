@@ -1,0 +1,5 @@
+2020-05-12 16:35:03.182  INFO 13900 --- [restartedMain] BlogApplication             : Starting BlogApplication on DESKTOP-6MOLQMT with PID 13900 (E:\ideaproject\blog\target\classes started by junha in E:\ideaproject\blog)
+2020-05-12 16:35:03.184  INFO 13900 --- [restartedMain] BlogApplication             : The following profiles are active: pro
+2020-05-12 16:35:04.532  WARN 13900 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-05-12 16:35:04.867  WARN 13900 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-12 16:35:05.110  INFO 13900 --- [restartedMain] BlogApplication             : Started BlogApplication in 2.315 seconds (JVM running for 3.692)

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="admin/_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Label</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css">
+    <link rel="stylesheet" href="../../static/css/new.css">
+</head>
+<body>
+    <nav th:replace="admin/_fragments :: menu(1)" class="ui inverted attached segment n-padded-tb-mini n-shadow-small">
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui teal header item">Administration</h2>
+                <a href="#" class="n-item item n-mobile-hide"><i class="home icon"></i>Blog</a>
+                <a href="#" class="n-item item n-mobile-hide"><i class="idea icon"></i>Group</a>
+                <a href="#" class="n-item item n-mobile-hide"><i class="tags icon"></i>Label</a>
+                <div class="right n-item menu n-mobile-hide">
+                    <div class="ui dropdown item">
+                        <div class="text">
+                            <img class="ui avatar image" src="https://unsplash.it/100/100?image=1005">
+                            Junhan Wang
+                        </div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a href="#" class="item">Sign out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button n-top-right n-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+
+    <div class="ui attached pointing menu">
+        <div class="ui container">
+            <div class="right menu">
+                <a href="#" th:href="@{/admin/blogs/input}" class="teal active item">Submit</a>
+                <a href="#" th:href="@{/admin/blogs}" class="item">List</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="n-container-small n-padded-tb-large">
+        <div class="ui container">
+            <form id="blog-form" action="#" th:object="${blog}" th:action="@{/admin/blogs}" method="post" class="ui form">
+                <input type="hidden" name="id" th:value="*{id}">
+                <input type="hidden" name="publish">
+                <div class="required field">
+                    <div class="ui left labeled input">
+                        <div class="ui selection teal basic dropdown label">
+                            <input type="hidden" value="Original" name="flag" th:value="*{flag}">
+                            <i class="dropdown icon"></i>
+                            <div class="teal text">Original</div>
+                            <div class="menu">
+                                <div class="item" data-value="Original">Original</div>
+                                <div class="item" data-value="Forward">Forward</div>
+                            </div>
+                        </div>
+                        <input type="text" name="title" placeholder="title" th:value="*{title}">
+                    </div>
+                </div>
+
+                <div class="required field">
+                    <div id="md-content" style="z-index: 1 !important;">
+                        <textarea placeholder="content" name="content" style="display: none;" th:text="*{content}"></textarea>
+                    </div>
+                </div>
+
+                <div class="two fields">
+                    <div class="required field">
+                        <div class="ui left labeled input">
+                            <label class="ui compact teal basic label">Group</label>
+                            <div class="ui fluid selection dropdown">
+                                <input type="hidden" name="type.id" th:value="*{type}!=null ? *{type.id}">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Group</div>
+                                <div class="menu">
+                                    <div th:each="type : ${types}" class="item" data-value="1" th:data-value="${type.id}" th:text="${type.name}">Error Log</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui left labeled input">
+                            <label class="ui compact teal basic label">Label</label>
+                            <div class="ui fluid multiple search selection dropdown">
+                                <input type="hidden" name="tagIds" th:value="*{tagIds}">
+                                <i class="dropdown icon"></i>
+                                <div class="default text">Label</div>
+                                <div class="menu">
+                                    <div th:each="tag : ${tags}" class="item" data-value="1" th:data-value="${tag.id}" th:text="${tag.name}">Java</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="required field">
+                    <div class="ui left labeled input">
+                        <label class="ui teal basic label">Picture</label>
+                        <input type="text" name="firstPicture" th:value="*{firstPicture}" placeholder="url for picture">
+                    </div>
+                </div>
+
+                <div class="required field">
+                    <textarea name="description" th:text="*{description}" placeholder="Blog Description" maxlength="200"></textarea>
+                </div>
+
+                <div class="inline fields">
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" id="recommend" name="recommend" th:checked="*{recommend}" class="hidden">
+                            <label for="recommend">Recommend</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" id="share" name="share" th:checked="*{share}" class="hidden">
+                            <label for="share">Forward</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" id="praise" name="praise" th:checked="*{praise}" class="hidden">
+                            <label for="praise">Praise</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui checkbox">
+                            <input type="checkbox" id="comment" name="comment" th:checked="*{comment}" class="hidden">
+                            <label for="comment">Comment</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui error message"></div>
+
+                <div class="ui right aligned container">
+                    <button type="button" class="ui button" onclick="window.history.go(-1)">Return</button>
+                    <button type="button" id="save-btn" class="ui secondary button">Save</button>
+                    <button type="button" id="publish-btn" class="ui teal button">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer th:replace="admin/_fragments :: footer" class="ui inverted vertical segment n-padded-tb-massive">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="three wide column">
+                    <div class="ui inverted link list">
+                        <div class="item">
+                            <img src="./static/images/QR.png" class="ui rounded image" alt="" style="width: 120px">
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header n-text-thin n-text-spaced">Latest blog</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">User Story</a>
+                        <a href="#" class="item">User Story</a>
+                        <a href="#" class="item">User Story</a>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header n-text-thin n-text-spaced">Contact</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item">Email: junhanwang@umass.edu</a>
+                        <a href="#" class="item">Phone: 413-404-4779</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header n-text-thin n-text-spaced">About</h4>
+                    <p class="n-opacity-mini">This is my personal blog. I will share content about programming and gaming. I hope this may help someone who come here.</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="n-text-thin n-text-spaced n-opacity-tiny">Copyright © 2020 Junhan Wang All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!--/*/<th:block th:replace="admin/_fragments :: script">/*/-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <!--/*/</th:block>/*/-->
+<script src="../../static/lib/editormd/editormd.min.js"></script>
+
+<script>
+    var contentEditor;
+    $(function() {
+        contentEditor = editormd("md-content", {
+            width   : "100%",
+            height  : 640,
+            syncScrolling : "single",
+            path    : "/static/lib/editormd/lib/"
+        });
+    });
+    $('.menu.toggle').click(function (){
+        $('.n-item').toggleClass('n-mobile-hide');
+    });
+    $('.ui.dropdown').dropdown({
+        on: "hover"
+    });
+    $('#save-btn').click(function () {
+        $('[name="publish"]').val(false);
+        $('#blog-form').submit();
+    });
+    $('#publish-btn').click(function () {
+        $('[name="publish"]').val(true);
+        $('#blog-form').submit();
+    });
+    $('.ui.form').form({
+        fields:{
+            title: {
+                identifier: 'title',
+                rules: [{
+                    type: 'empty',
+                    prompt: 'Title: please input title'
+                }]
+            },
+            content: {
+                identifier: 'content',
+                rules: [{
+                    type: 'empty',
+                    prompt: 'Content: please input content'
+                }]
+            },
+            typeId: {
+                identifier: 'type.id',
+                rules: [{
+                    type: 'empty',
+                    prompt: 'typeId: please input typeId'
+                }]
+            },
+            firstPicture: {
+                identifier: 'firstPicture',
+                rules: [{
+                    type: 'empty',
+                    prompt: 'Image: please input image'
+                }]
+            },
+            description: {
+                identifier: 'description',
+                rules: [{
+                    type: 'empty',
+                    prompt: 'Description: please input blog description'
+                }]
+            }
+        }
+    });
+</script>
+</body>
+</html>
