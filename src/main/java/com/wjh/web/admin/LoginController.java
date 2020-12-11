@@ -1,7 +1,9 @@
 package com.wjh.web.admin;
 
+import com.wjh.dao.UserRepository;
 import com.wjh.po.User;
 import com.wjh.service.UserService;
+import com.wjh.util.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,9 @@ public class LoginController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @GetMapping
     public String loginPage() {
@@ -46,5 +51,13 @@ public class LoginController {
     public String Signout(HttpSession session) {
         session.removeAttribute("user");
         return "redirect:/admin";
+    }
+
+    @PostMapping("/register")
+    public void register(){
+        User newUser = new User();
+        newUser.setUsername("junhanwang");
+        newUser.setPassword(MD5Utils.code("125690"));
+        userRepository.save(newUser);
     }
 }

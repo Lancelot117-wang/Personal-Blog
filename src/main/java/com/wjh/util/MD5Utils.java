@@ -1,5 +1,7 @@
 package com.wjh.util;
 
+import org.springframework.stereotype.Component;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
