@@ -1,97 +1,854 @@
-2020-12-11 03:29:11.759  INFO 2336 --- [restartedMain] com.wjh.BlogApplication                  : Starting BlogApplication on DESKTOP-6MOLQMT with PID 2336 (E:\ideaproject\blog\target\classes started by junha in E:\ideaproject\blog)
-2020-12-11 03:29:11.786 DEBUG 2336 --- [restartedMain] com.wjh.BlogApplication                  : Running with Spring Boot v2.2.7.RELEASE, Spring v5.2.6.RELEASE
-2020-12-11 03:29:11.786  INFO 2336 --- [restartedMain] com.wjh.BlogApplication                  : The following profiles are active: dev
-2020-12-11 03:29:11.884  INFO 2336 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-12-11 03:29:11.884  INFO 2336 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-12-11 03:29:12.842  INFO 2336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-12-11 03:29:12.941  INFO 2336 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 87ms. Found 5 JPA repository interfaces.
-2020-12-11 03:29:13.866  INFO 2336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
-2020-12-11 03:29:13.875  INFO 2336 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-12-11 03:29:13.875  INFO 2336 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
-2020-12-11 03:29:13.992  INFO 2336 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-12-11 03:29:13.992  INFO 2336 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2107 ms
-2020-12-11 03:29:14.238  INFO 2336 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-12-11 03:29:14.293  INFO 2336 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
-2020-12-11 03:29:14.496  INFO 2336 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-12-11 03:29:14.627  INFO 2336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-12-11 03:29:14.776  INFO 2336 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-12-11 03:29:14.791  INFO 2336 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2020-12-11 03:29:15.975  INFO 2336 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-12-11 03:29:15.986  INFO 2336 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-12-11 03:29:16.127  INFO 2336 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-12-11 03:29:16.883  WARN 2336 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-12-11 03:29:17.062  INFO 2336 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-12-11 03:29:17.148  INFO 2336 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-12-11 03:29:17.211  WARN 2336 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2020-12-11 03:29:18.154  INFO 2336 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
-2020-12-11 03:29:18.156  INFO 2336 --- [restartedMain] com.wjh.BlogApplication                  : Started BlogApplication in 7.067 seconds (JVM running for 8.842)
-2020-12-11 03:29:49.065  INFO 2336 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-12-11 03:29:49.065  INFO 2336 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-12-11 03:29:49.072  INFO 2336 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
-2020-12-11 03:29:49.099  INFO 2336 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 2, sort: updateTime: DESC], {}]}
-2020-12-11 03:29:49.154  WARN 2336 --- [http-nio-5000-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
-2020-12-11 03:29:49.318  WARN 2336 --- [http-nio-5000-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
-2020-12-11 03:29:49.324  INFO 2336 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : index
-2020-12-11 03:29:50.253  INFO 2336 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
-2020-12-11 03:29:50.256  INFO 2336 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
-2020-12-11 03:29:50.282  WARN 2336 --- [http-nio-5000-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
-2020-12-11 03:48:19.699  INFO 1312 --- [restartedMain] com.wjh.BlogApplication                  : Starting BlogApplication on DESKTOP-6MOLQMT with PID 1312 (E:\ideaproject\blog\target\classes started by junha in E:\ideaproject\blog)
-2020-12-11 03:48:19.701 DEBUG 1312 --- [restartedMain] com.wjh.BlogApplication                  : Running with Spring Boot v2.2.7.RELEASE, Spring v5.2.6.RELEASE
-2020-12-11 03:48:19.701  INFO 1312 --- [restartedMain] com.wjh.BlogApplication                  : The following profiles are active: dev
-2020-12-11 03:48:19.778  INFO 1312 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-12-11 03:48:19.778  INFO 1312 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-12-11 03:48:20.753  INFO 1312 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-12-11 03:48:20.832  INFO 1312 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 72ms. Found 5 JPA repository interfaces.
-2020-12-11 03:48:21.553  INFO 1312 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
-2020-12-11 03:48:21.561  INFO 1312 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-12-11 03:48:21.561  INFO 1312 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
-2020-12-11 03:48:21.700  INFO 1312 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-12-11 03:48:21.700  INFO 1312 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1922 ms
-2020-12-11 03:48:21.927  INFO 1312 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-12-11 03:48:21.996  INFO 1312 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
-2020-12-11 03:48:22.190  INFO 1312 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-12-11 03:48:22.287  INFO 1312 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-12-11 03:48:22.394  INFO 1312 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-12-11 03:48:22.409  INFO 1312 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2020-12-11 03:48:23.186  INFO 1312 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-12-11 03:48:23.192  INFO 1312 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-12-11 03:48:23.240  INFO 1312 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-12-11 03:48:23.909  WARN 1312 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-12-11 03:48:24.058  INFO 1312 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-12-11 03:48:24.150  INFO 1312 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-12-11 03:48:24.205  WARN 1312 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2020-12-11 03:48:24.450  INFO 1312 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
-2020-12-11 03:48:24.452  INFO 1312 --- [restartedMain] com.wjh.BlogApplication                  : Started BlogApplication in 5.23 seconds (JVM running for 6.811)
-2020-12-11 03:48:27.255  INFO 1312 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-12-11 03:48:27.256  INFO 1312 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-12-11 03:48:27.267  INFO 1312 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
-2020-12-11 03:55:35.712  INFO 4220 --- [restartedMain] com.wjh.BlogApplication                  : Starting BlogApplication on DESKTOP-6MOLQMT with PID 4220 (E:\ideaproject\blog\target\classes started by junha in E:\ideaproject\blog)
-2020-12-11 03:55:35.717 DEBUG 4220 --- [restartedMain] com.wjh.BlogApplication                  : Running with Spring Boot v2.2.7.RELEASE, Spring v5.2.6.RELEASE
-2020-12-11 03:55:35.717  INFO 4220 --- [restartedMain] com.wjh.BlogApplication                  : The following profiles are active: dev
-2020-12-11 03:55:35.806  INFO 4220 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-12-11 03:55:35.806  INFO 4220 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-12-11 03:55:36.291  INFO 4220 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-12-11 03:55:36.356  INFO 4220 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59ms. Found 5 JPA repository interfaces.
-2020-12-11 03:55:36.928  INFO 4220 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
-2020-12-11 03:55:36.936  INFO 4220 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-12-11 03:55:36.937  INFO 4220 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
-2020-12-11 03:55:37.041  INFO 4220 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-12-11 03:55:37.042  INFO 4220 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1236 ms
-2020-12-11 03:55:37.227  INFO 4220 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-12-11 03:55:37.256  INFO 4220 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
-2020-12-11 03:55:37.333  INFO 4220 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-12-11 03:55:37.399  INFO 4220 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-12-11 03:55:37.487  INFO 4220 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-12-11 03:55:37.495  INFO 4220 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
-2020-12-11 03:55:38.139  INFO 4220 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-12-11 03:55:38.145  INFO 4220 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-12-11 03:55:38.193  INFO 4220 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-12-11 03:55:38.857  WARN 4220 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-12-11 03:55:39.080  INFO 4220 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-12-11 03:55:39.181  INFO 4220 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-12-11 03:55:39.242  WARN 4220 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
-2020-12-11 03:55:39.496  INFO 4220 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
-2020-12-11 03:55:39.499  INFO 4220 --- [restartedMain] com.wjh.BlogApplication                  : Started BlogApplication in 4.235 seconds (JVM running for 5.613)
-2020-12-11 03:55:46.757  INFO 4220 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-12-11 03:55:46.757  INFO 4220 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-12-11 03:55:46.768  INFO 4220 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-12-17 00:44:33.193  INFO 15836 --- [restartedMain] com.wjh.BlogApplication                  : Starting BlogApplication on DESKTOP-6MOLQMT with PID 15836 (E:\ideaproject\blog\target\classes started by junha in E:\ideaproject\blog)
+2020-12-17 00:44:33.201 DEBUG 15836 --- [restartedMain] com.wjh.BlogApplication                  : Running with Spring Boot v2.2.7.RELEASE, Spring v5.2.6.RELEASE
+2020-12-17 00:44:33.202  INFO 15836 --- [restartedMain] com.wjh.BlogApplication                  : The following profiles are active: dev
+2020-12-17 00:44:33.293  INFO 15836 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-17 00:44:33.297  INFO 15836 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-17 00:44:34.511  INFO 15836 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-17 00:44:34.600  INFO 15836 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77ms. Found 5 JPA repository interfaces.
+2020-12-17 00:44:35.495  INFO 15836 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2020-12-17 00:44:35.508  INFO 15836 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-17 00:44:35.508  INFO 15836 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-12-17 00:44:35.696  INFO 15836 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-17 00:44:35.696  INFO 15836 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2398 ms
+2020-12-17 00:44:36.106  INFO 15836 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-17 00:44:36.185  INFO 15836 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
+2020-12-17 00:44:36.385  INFO 15836 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-17 00:44:36.518  INFO 15836 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-17 00:44:36.913  INFO 15836 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-17 00:44:36.936  INFO 15836 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-12-17 00:44:38.234  INFO 15836 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-17 00:44:38.251  INFO 15836 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-17 00:44:38.303  INFO 15836 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-12-17 00:44:39.106  WARN 15836 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-17 00:44:39.292  INFO 15836 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-17 00:44:39.416  INFO 15836 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-12-17 00:44:39.498  WARN 15836 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-12-17 00:44:39.832  INFO 15836 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2020-12-17 00:44:39.832  INFO 15836 --- [restartedMain] com.wjh.BlogApplication                  : Started BlogApplication in 7.21 seconds (JVM running for 9.039)
+2020-12-17 00:44:58.117  INFO 15836 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-17 00:44:58.117  INFO 15836 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-17 00:44:58.125  INFO 15836 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-12-17 00:44:58.154  INFO 15836 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 2, sort: updateTime: DESC], {}]}
+2020-12-17 00:44:58.310  WARN 15836 --- [http-nio-5000-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-12-17 00:44:58.354  WARN 15836 --- [http-nio-5000-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-12-17 00:44:58.360  INFO 15836 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 00:44:59.216  INFO 15836 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 00:44:59.220  INFO 15836 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 00:44:59.600  WARN 15836 --- [http-nio-5000-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /favicon.ico
+2020-12-17 01:00:42.138  INFO 15836 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 2, sort: updateTime: DESC], {}]}
+2020-12-17 01:00:42.250  INFO 15836 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:00:42.648  INFO 15836 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:00:42.653  INFO 15836 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:00:48.102  INFO 15836 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/blog/60', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.blog', args=[60, {}]}
+2020-12-17 01:00:48.215  INFO 15836 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Result : blog
+2020-12-17 01:00:48.559  INFO 15836 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:00:48.562  INFO 15836 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:00:48.602  INFO 15836 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/comments/60', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.CommentController.comments', args=[60, {}]}
+2020-12-17 01:00:48.691  INFO 15836 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Result : blog :: commentList
+2020-12-17 01:10:19.734  INFO 15836 --- [http-nio-5000-exec-10] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 2, sort: updateTime: DESC], {}]}
+2020-12-17 01:10:19.743  INFO 15836 --- [http-nio-5000-exec-10] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:10:20.006  INFO 15836 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:10:20.009  INFO 15836 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:20:35.330  WARN 15836 --- [http-nio-5000-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1366, SQLState: HY000
+2020-12-17 01:20:35.330 ERROR 15836 --- [http-nio-5000-exec-2] o.h.engine.jdbc.spi.SqlExceptionHelper   : Incorrect string value: '\xE2\x94\x9C\xE2\x94\x80...' for column 'content' at row 1
+2020-12-17 01:20:35.354 ERROR 15836 --- [http-nio-5000-exec-2] com.wjh.handler.ControlExceptionHandler  : Request URL: http://localhost:5000/admin/blogs, Exception: {}
+
+org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:353)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:255)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:538)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:631)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.wjh.service.BlogServiceImpl$$EnhancerBySpringCGLIB$$79d26f94.saveBlog(<generated>)
+	at com.wjh.web.admin.BlogController.post(BlogController.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.hibernate.exception.GenericJDBCException: could not execute statement
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:47)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3235)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3760)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:348)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1352)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:443)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3202)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2370)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:534)
+	... 60 common frames omitted
+Caused by: java.sql.SQLException: Incorrect string value: '\xE2\x94\x9C\xE2\x94\x80...' for column 'content' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	... 80 common frames omitted
+
+2020-12-17 01:20:35.355  WARN 15836 --- [http-nio-5000-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement]
+2020-12-17 01:21:12.158  WARN 15836 --- [http-nio-5000-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1366, SQLState: HY000
+2020-12-17 01:21:12.158 ERROR 15836 --- [http-nio-5000-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : Incorrect string value: '\xE2\x94\x9C\xE2\x94\x80...' for column 'content' at row 1
+2020-12-17 01:21:12.160 ERROR 15836 --- [http-nio-5000-exec-6] com.wjh.handler.ControlExceptionHandler  : Request URL: http://localhost:5000/admin/blogs, Exception: {}
+
+org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:353)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:255)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:538)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:631)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.wjh.service.BlogServiceImpl$$EnhancerBySpringCGLIB$$79d26f94.saveBlog(<generated>)
+	at com.wjh.web.admin.BlogController.post(BlogController.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.hibernate.exception.GenericJDBCException: could not execute statement
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:47)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3235)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3760)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:348)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1352)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:443)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3202)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2370)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:534)
+	... 60 common frames omitted
+Caused by: java.sql.SQLException: Incorrect string value: '\xE2\x94\x9C\xE2\x94\x80...' for column 'content' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	... 80 common frames omitted
+
+2020-12-17 01:21:12.161  WARN 15836 --- [http-nio-5000-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement]
+2020-12-17 01:21:56.760  WARN 15836 --- [http-nio-5000-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1366, SQLState: HY000
+2020-12-17 01:21:56.760 ERROR 15836 --- [http-nio-5000-exec-3] o.h.engine.jdbc.spi.SqlExceptionHelper   : Incorrect string value: '\xE2\x94\x9C\xE2\x94\x80...' for column 'content' at row 1
+2020-12-17 01:21:56.762 ERROR 15836 --- [http-nio-5000-exec-3] com.wjh.handler.ControlExceptionHandler  : Request URL: http://localhost:5000/admin/blogs, Exception: {}
+
+org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:353)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:255)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:538)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:631)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.wjh.service.BlogServiceImpl$$EnhancerBySpringCGLIB$$79d26f94.saveBlog(<generated>)
+	at com.wjh.web.admin.BlogController.post(BlogController.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.hibernate.exception.GenericJDBCException: could not execute statement
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:47)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3235)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3760)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:348)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1352)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:443)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3202)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2370)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:534)
+	... 60 common frames omitted
+Caused by: java.sql.SQLException: Incorrect string value: '\xE2\x94\x9C\xE2\x94\x80...' for column 'content' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	... 80 common frames omitted
+
+2020-12-17 01:21:56.860  WARN 15836 --- [http-nio-5000-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement]
+2020-12-17 01:22:49.373  WARN 15836 --- [http-nio-5000-exec-1] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:22:49.429  WARN 15836 --- [http-nio-5000-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:22:49.583  WARN 15836 --- [http-nio-5000-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:23:00.360  WARN 15836 --- [http-nio-5000-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1366, SQLState: HY000
+2020-12-17 01:23:00.361 ERROR 15836 --- [http-nio-5000-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : Incorrect string value: '\xE2\x94\x9C\xE2\x94\x80...' for column 'content' at row 1
+2020-12-17 01:23:00.364 ERROR 15836 --- [http-nio-5000-exec-6] com.wjh.handler.ControlExceptionHandler  : Request URL: http://localhost:5000/admin/blogs, Exception: {}
+
+org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:353)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:255)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:538)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:631)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.wjh.service.BlogServiceImpl$$EnhancerBySpringCGLIB$$79d26f94.saveBlog(<generated>)
+	at com.wjh.web.admin.BlogController.post(BlogController.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.hibernate.exception.GenericJDBCException: could not execute statement
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:47)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)
+	at org.hibernate.persister.entity.AbstractEntityPersister.update(AbstractEntityPersister.java:3430)
+	at org.hibernate.persister.entity.AbstractEntityPersister.updateOrInsert(AbstractEntityPersister.java:3292)
+	at org.hibernate.persister.entity.AbstractEntityPersister.update(AbstractEntityPersister.java:3704)
+	at org.hibernate.action.internal.EntityUpdateAction.execute(EntityUpdateAction.java:201)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:348)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1352)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:443)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3202)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2370)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:534)
+	... 60 common frames omitted
+Caused by: java.sql.SQLException: Incorrect string value: '\xE2\x94\x9C\xE2\x94\x80...' for column 'content' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	... 81 common frames omitted
+
+2020-12-17 01:23:00.365  WARN 15836 --- [http-nio-5000-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.orm.jpa.JpaSystemException: could not execute statement; nested exception is org.hibernate.exception.GenericJDBCException: could not execute statement]
+2020-12-17 01:24:01.485  INFO 15836 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 2, sort: updateTime: DESC], {}]}
+2020-12-17 01:24:01.498  INFO 15836 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:24:01.820  INFO 15836 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:24:01.825  INFO 15836 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:24:04.391  INFO 15836 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 1, size 2, sort: updateTime: DESC], {}]}
+2020-12-17 01:24:04.400  INFO 15836 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:24:04.632  INFO 15836 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:24:04.636  INFO 15836 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:24:05.557  INFO 15836 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 2, sort: updateTime: DESC], {}]}
+2020-12-17 01:24:05.564  INFO 15836 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:24:05.790  INFO 15836 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:24:05.793  INFO 15836 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:24:42.765  INFO 11296 --- [restartedMain] com.wjh.BlogApplication                  : Starting BlogApplication on DESKTOP-6MOLQMT with PID 11296 (E:\ideaproject\blog\target\classes started by junha in E:\ideaproject\blog)
+2020-12-17 01:24:42.767 DEBUG 11296 --- [restartedMain] com.wjh.BlogApplication                  : Running with Spring Boot v2.2.7.RELEASE, Spring v5.2.6.RELEASE
+2020-12-17 01:24:42.767  INFO 11296 --- [restartedMain] com.wjh.BlogApplication                  : The following profiles are active: dev
+2020-12-17 01:24:42.850  INFO 11296 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-17 01:24:42.850  INFO 11296 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-17 01:24:43.511  INFO 11296 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-17 01:24:43.580  INFO 11296 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61ms. Found 5 JPA repository interfaces.
+2020-12-17 01:24:44.405  INFO 11296 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2020-12-17 01:24:44.412  INFO 11296 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-17 01:24:44.412  INFO 11296 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-12-17 01:24:44.531  INFO 11296 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-17 01:24:44.531  INFO 11296 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1681 ms
+2020-12-17 01:24:44.735  INFO 11296 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-17 01:24:44.800  INFO 11296 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
+2020-12-17 01:24:44.997  INFO 11296 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-17 01:24:45.075  INFO 11296 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-17 01:24:45.172  INFO 11296 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-17 01:24:45.186  INFO 11296 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-12-17 01:24:46.488  INFO 11296 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-17 01:24:46.495  INFO 11296 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-17 01:24:46.541  INFO 11296 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-12-17 01:24:47.232  WARN 11296 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-17 01:24:47.384  INFO 11296 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-17 01:24:47.468  INFO 11296 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-12-17 01:24:47.522  WARN 11296 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-12-17 01:24:47.751  INFO 11296 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2020-12-17 01:24:47.752  INFO 11296 --- [restartedMain] com.wjh.BlogApplication                  : Started BlogApplication in 5.378 seconds (JVM running for 6.802)
+2020-12-17 01:25:22.646  INFO 11296 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-17 01:25:22.647  INFO 11296 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-17 01:25:22.655  INFO 11296 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
+2020-12-17 01:25:22.681  INFO 11296 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:25:22.754  WARN 11296 --- [http-nio-5000-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-12-17 01:25:22.766  WARN 11296 --- [http-nio-5000-exec-1] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-12-17 01:25:22.772  INFO 11296 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:25:23.326  INFO 11296 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:25:23.334  INFO 11296 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:25:29.960  INFO 11296 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/tags/56', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.TagShowController.tags', args=[Page request [number: 0, size 2, sort: updateTime: DESC], {}, 56]}
+2020-12-17 01:25:29.994  INFO 11296 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Result : tag
+2020-12-17 01:25:30.285  INFO 11296 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:25:30.291  INFO 11296 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:25:32.825  INFO 11296 --- [http-nio-5000-exec-9] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.TypeShowController.types', args=[Page request [number: 0, size 2, sort: updateTime: DESC], {}, -1]}
+2020-12-17 01:25:32.861  INFO 11296 --- [http-nio-5000-exec-9] com.wjh.aspect.LogAspect                 : Result : group
+2020-12-17 01:25:33.114  INFO 11296 --- [http-nio-5000-exec-9] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:25:33.126  INFO 11296 --- [http-nio-5000-exec-9] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:25:33.653  INFO 11296 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.TagShowController.tags', args=[Page request [number: 0, size 2, sort: updateTime: DESC], {}, -1]}
+2020-12-17 01:25:33.663  INFO 11296 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Result : tag
+2020-12-17 01:25:33.896  INFO 11296 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:25:33.902  INFO 11296 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:25:34.449  INFO 11296 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.ArchiveShowController.archives', args=[{}]}
+2020-12-17 01:25:34.637  INFO 11296 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Result : archives
+2020-12-17 01:25:34.877  INFO 11296 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:25:34.879  INFO 11296 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:25:36.135  INFO 11296 --- [http-nio-5000-exec-3] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/about', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.AboutShowController.about', args=[]}
+2020-12-17 01:25:36.138  INFO 11296 --- [http-nio-5000-exec-3] com.wjh.aspect.LogAspect                 : Result : about
+2020-12-17 01:25:36.385  INFO 11296 --- [http-nio-5000-exec-3] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:25:36.389  INFO 11296 --- [http-nio-5000-exec-3] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:25:38.288  INFO 11296 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:25:38.300  INFO 11296 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:25:38.542  INFO 11296 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:25:38.547  INFO 11296 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:25:40.976  INFO 11296 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.ArchiveShowController.archives', args=[{}]}
+2020-12-17 01:25:40.985  INFO 11296 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Result : archives
+2020-12-17 01:25:41.207  INFO 11296 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:25:41.212  INFO 11296 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:26:54.701  INFO 8356 --- [restartedMain] com.wjh.BlogApplication                  : Starting BlogApplication on DESKTOP-6MOLQMT with PID 8356 (E:\ideaproject\blog\target\classes started by junha in E:\ideaproject\blog)
+2020-12-17 01:26:54.704 DEBUG 8356 --- [restartedMain] com.wjh.BlogApplication                  : Running with Spring Boot v2.2.7.RELEASE, Spring v5.2.6.RELEASE
+2020-12-17 01:26:54.704  INFO 8356 --- [restartedMain] com.wjh.BlogApplication                  : The following profiles are active: dev
+2020-12-17 01:26:54.761  INFO 8356 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-17 01:26:54.761  INFO 8356 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-17 01:26:55.259  INFO 8356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-17 01:26:55.326  INFO 8356 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62ms. Found 5 JPA repository interfaces.
+2020-12-17 01:26:55.904  INFO 8356 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2020-12-17 01:26:55.911  INFO 8356 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-17 01:26:55.911  INFO 8356 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-12-17 01:26:56.010  INFO 8356 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-17 01:26:56.010  INFO 8356 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1248 ms
+2020-12-17 01:26:56.194  INFO 8356 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-17 01:26:56.224  INFO 8356 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
+2020-12-17 01:26:56.300  INFO 8356 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-17 01:26:56.364  INFO 8356 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-17 01:26:56.444  INFO 8356 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-17 01:26:56.452  INFO 8356 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-12-17 01:26:57.290  INFO 8356 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-17 01:26:57.296  INFO 8356 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-17 01:26:57.340  INFO 8356 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-12-17 01:26:57.915  WARN 8356 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-17 01:26:58.070  INFO 8356 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-17 01:26:58.139  INFO 8356 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-12-17 01:26:58.192  WARN 8356 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-12-17 01:26:58.411  INFO 8356 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2020-12-17 01:26:58.413  INFO 8356 --- [restartedMain] com.wjh.BlogApplication                  : Started BlogApplication in 4.145 seconds (JVM running for 5.639)
+2020-12-17 01:27:01.957  INFO 8356 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-17 01:27:01.958  INFO 8356 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-17 01:27:01.967  INFO 8356 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2020-12-17 01:27:01.987  INFO 8356 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.ArchiveShowController.archives', args=[{}]}
+2020-12-17 01:27:02.055  INFO 8356 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : archives
+2020-12-17 01:27:02.576  INFO 8356 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:27:02.590  INFO 8356 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:27:21.884  INFO 6308 --- [restartedMain] com.wjh.BlogApplication                  : Starting BlogApplication on DESKTOP-6MOLQMT with PID 6308 (E:\ideaproject\blog\target\classes started by junha in E:\ideaproject\blog)
+2020-12-17 01:27:21.888 DEBUG 6308 --- [restartedMain] com.wjh.BlogApplication                  : Running with Spring Boot v2.2.7.RELEASE, Spring v5.2.6.RELEASE
+2020-12-17 01:27:21.888  INFO 6308 --- [restartedMain] com.wjh.BlogApplication                  : The following profiles are active: dev
+2020-12-17 01:27:21.970  INFO 6308 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-17 01:27:21.970  INFO 6308 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-17 01:27:22.419  INFO 6308 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-12-17 01:27:22.481  INFO 6308 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57ms. Found 5 JPA repository interfaces.
+2020-12-17 01:27:23.042  INFO 6308 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 5000 (http)
+2020-12-17 01:27:23.048  INFO 6308 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-12-17 01:27:23.048  INFO 6308 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.34]
+2020-12-17 01:27:23.148  INFO 6308 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-12-17 01:27:23.148  INFO 6308 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1178 ms
+2020-12-17 01:27:23.329  INFO 6308 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-12-17 01:27:23.357  INFO 6308 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.15.Final
+2020-12-17 01:27:23.433  INFO 6308 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-12-17 01:27:23.494  INFO 6308 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-12-17 01:27:23.581  INFO 6308 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-12-17 01:27:23.589  INFO 6308 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2020-12-17 01:27:24.575  INFO 6308 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-12-17 01:27:24.582  INFO 6308 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-12-17 01:27:24.627  INFO 6308 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-12-17 01:27:25.219  WARN 6308 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-17 01:27:25.366  INFO 6308 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-17 01:27:25.446  INFO 6308 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-12-17 01:27:25.500  WARN 6308 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-12-17 01:27:25.737  INFO 6308 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 5000 (http) with context path ''
+2020-12-17 01:27:25.741  INFO 6308 --- [restartedMain] com.wjh.BlogApplication                  : Started BlogApplication in 4.327 seconds (JVM running for 5.723)
+2020-12-17 01:27:28.895  INFO 6308 --- [http-nio-5000-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-17 01:27:28.896  INFO 6308 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-12-17 01:27:28.906  INFO 6308 --- [http-nio-5000-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-12-17 01:27:28.928  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.ArchiveShowController.archives', args=[{}]}
+2020-12-17 01:27:28.996  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : archives
+2020-12-17 01:27:29.529  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:27:29.546  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:27:35.648  INFO 6308 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/blog/61', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.blog', args=[61, {}]}
+2020-12-17 01:27:35.700  INFO 6308 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Result : blog
+2020-12-17 01:27:35.961  INFO 6308 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:27:35.965  INFO 6308 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:27:36.002  INFO 6308 --- [http-nio-5000-exec-3] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/comments/61', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.CommentController.comments', args=[61, {}]}
+2020-12-17 01:27:36.027  INFO 6308 --- [http-nio-5000-exec-3] com.wjh.aspect.LogAspect                 : Result : blog :: commentList
+2020-12-17 01:28:33.619  WARN 6308 --- [http-nio-5000-exec-9] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:28:33.690  WARN 6308 --- [http-nio-5000-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:28:33.834  WARN 6308 --- [http-nio-5000-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:28:39.326  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.ArchiveShowController.archives', args=[{}]}
+2020-12-17 01:28:39.337  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : archives
+2020-12-17 01:28:39.600  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:28:39.605  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:28:41.375  INFO 6308 --- [http-nio-5000-exec-10] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:28:41.384  WARN 6308 --- [http-nio-5000-exec-10] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-12-17 01:28:41.388  WARN 6308 --- [http-nio-5000-exec-10] org.hibernate.orm.deprecation            : HHH90000016: Found use of deprecated 'collection property' syntax in HQL/JPQL query [t.blogs.size]; use collection function syntax instead [size(t.blogs)].
+2020-12-17 01:28:41.390  INFO 6308 --- [http-nio-5000-exec-10] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:28:41.622  INFO 6308 --- [http-nio-5000-exec-10] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:28:41.628  INFO 6308 --- [http-nio-5000-exec-10] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:28:42.812  INFO 6308 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.TypeShowController.types', args=[Page request [number: 0, size 2, sort: updateTime: DESC], {}, -1]}
+2020-12-17 01:28:42.823  INFO 6308 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Result : group
+2020-12-17 01:28:43.054  INFO 6308 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:28:43.062  INFO 6308 --- [http-nio-5000-exec-4] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:28:46.565  INFO 6308 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.TagShowController.tags', args=[Page request [number: 0, size 2, sort: updateTime: DESC], {}, -1]}
+2020-12-17 01:28:46.584  INFO 6308 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Result : tag
+2020-12-17 01:28:46.863  INFO 6308 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:28:46.868  INFO 6308 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:28:55.185  INFO 6308 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:28:55.193  INFO 6308 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:28:55.418  INFO 6308 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:28:55.424  INFO 6308 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:28:56.624  INFO 6308 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.TagShowController.tags', args=[Page request [number: 0, size 2, sort: updateTime: DESC], {}, -1]}
+2020-12-17 01:28:56.632  INFO 6308 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Result : tag
+2020-12-17 01:28:56.871  INFO 6308 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:28:56.878  INFO 6308 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:28:57.335  INFO 6308 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:28:57.344  INFO 6308 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:28:57.562  INFO 6308 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:28:57.569  INFO 6308 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:34:39.714  INFO 6308 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:34:39.724  INFO 6308 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:34:40.032  INFO 6308 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:34:40.043  INFO 6308 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:35:27.467  WARN 6308 --- [http-nio-5000-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:35:27.542  WARN 6308 --- [http-nio-5000-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:35:27.713  WARN 6308 --- [http-nio-5000-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:35:45.071  INFO 6308 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:35:45.083  INFO 6308 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:35:45.371  INFO 6308 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:35:45.375  INFO 6308 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:35:50.711  WARN 6308 --- [http-nio-5000-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:35:50.764  WARN 6308 --- [http-nio-5000-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:35:50.924  WARN 6308 --- [http-nio-5000-exec-10] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:36:05.564  INFO 6308 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:36:05.570  INFO 6308 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:36:05.843  INFO 6308 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:36:05.846  INFO 6308 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:36:20.245  WARN 6308 --- [http-nio-5000-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:36:20.301  WARN 6308 --- [http-nio-5000-exec-9] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:36:20.450  WARN 6308 --- [http-nio-5000-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:36:38.230  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:36:38.241  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:36:38.511  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:36:38.515  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:36:49.191  WARN 6308 --- [http-nio-5000-exec-10] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:36:49.261  WARN 6308 --- [http-nio-5000-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:36:49.434  WARN 6308 --- [http-nio-5000-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /admin/static/lib/editormd/editormd.min.js
+2020-12-17 01:37:02.926  INFO 6308 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:37:02.936  INFO 6308 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:37:03.231  INFO 6308 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:37:03.236  INFO 6308 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:37:17.566  INFO 6308 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/archives', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.ArchiveShowController.archives', args=[{}]}
+2020-12-17 01:37:17.573  INFO 6308 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Result : archives
+2020-12-17 01:37:17.788  INFO 6308 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:37:17.792  INFO 6308 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:37:19.494  INFO 6308 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/types/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.TypeShowController.types', args=[Page request [number: 0, size 2, sort: updateTime: DESC], {}, -1]}
+2020-12-17 01:37:19.501  INFO 6308 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Result : group
+2020-12-17 01:37:19.727  INFO 6308 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:37:19.730  INFO 6308 --- [http-nio-5000-exec-2] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:37:20.270  INFO 6308 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/tags/-1', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.TagShowController.tags', args=[Page request [number: 0, size 2, sort: updateTime: DESC], {}, -1]}
+2020-12-17 01:37:20.276  INFO 6308 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Result : tag
+2020-12-17 01:37:20.484  INFO 6308 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:37:20.488  INFO 6308 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:37:21.102  INFO 6308 --- [http-nio-5000-exec-3] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:37:21.110  INFO 6308 --- [http-nio-5000-exec-3] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:37:21.338  INFO 6308 --- [http-nio-5000-exec-3] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:37:21.342  INFO 6308 --- [http-nio-5000-exec-3] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:37:21.865  INFO 6308 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/about', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.AboutShowController.about', args=[]}
+2020-12-17 01:37:21.868  INFO 6308 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Result : about
+2020-12-17 01:37:22.099  INFO 6308 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:37:22.103  INFO 6308 --- [http-nio-5000-exec-6] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:37:27.470  INFO 6308 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:37:27.483  INFO 6308 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:37:27.724  INFO 6308 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:37:27.727  INFO 6308 --- [http-nio-5000-exec-8] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:41:21.952  WARN 6308 --- [http-nio-5000-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1406, SQLState: 22001
+2020-12-17 01:41:21.953 ERROR 6308 --- [http-nio-5000-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : Data truncation: Data too long for column 'first_picture' at row 1
+2020-12-17 01:41:21.964 ERROR 6308 --- [http-nio-5000-exec-4] com.wjh.handler.ControlExceptionHandler  : Request URL: http://localhost:5000/admin/blogs, Exception: {}
+
+org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.DataException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:302)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:255)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:538)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:631)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:385)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:691)
+	at com.wjh.service.BlogServiceImpl$$EnhancerBySpringCGLIB$$adafc70e.saveBlog(<generated>)
+	at com.wjh.web.admin.BlogController.post(BlogController.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.hibernate.exception.DataException: could not execute statement
+	at org.hibernate.exception.internal.SQLExceptionTypeDelegate.convert(SQLExceptionTypeDelegate.java:52)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:200)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3235)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3760)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:107)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:478)
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:684)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:475)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:348)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:102)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1352)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:443)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3202)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2370)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:447)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:40)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:534)
+	... 60 common frames omitted
+Caused by: com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'first_picture' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1347)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	... 80 common frames omitted
+
+2020-12-17 01:41:21.964  WARN 6308 --- [http-nio-5000-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; nested exception is org.hibernate.exception.DataException: could not execute statement]
+2020-12-17 01:41:54.235  INFO 6308 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:41:54.246  INFO 6308 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:41:54.504  INFO 6308 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:41:54.508  INFO 6308 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:45:50.524  INFO 6308 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:45:50.536  INFO 6308 --- [http-nio-5000-exec-5] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:45:51.886  INFO 6308 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:45:51.889  INFO 6308 --- [http-nio-5000-exec-7] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:45:55.796  INFO 6308 --- [http-nio-5000-exec-3] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 1, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:45:55.805  INFO 6308 --- [http-nio-5000-exec-3] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:45:56.049  INFO 6308 --- [http-nio-5000-exec-3] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:45:56.053  INFO 6308 --- [http-nio-5000-exec-3] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList
+2020-12-17 01:45:57.357  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.index', args=[Page request [number: 0, size 5, sort: updateTime: DESC], {}]}
+2020-12-17 01:45:57.580  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : index
+2020-12-17 01:45:57.812  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Request : {url='http://localhost:5000/footer/newblog', ip='0:0:0:0:0:0:0:1', classMethod='com.wjh.web.IndexController.newBlogs', args=[{}]}
+2020-12-17 01:45:57.817  INFO 6308 --- [http-nio-5000-exec-1] com.wjh.aspect.LogAspect                 : Result : _fragments :: newBlogList

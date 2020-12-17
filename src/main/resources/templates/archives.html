@@ -49,7 +49,7 @@
                     <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item" th:each="blog : ${item.value}">
                     <span>
                         <i class="mini teal circle icon"></i><span th:text="${blog.title}">About Exercise</span>
-                        <div class="ui teal basic left pointing label n-padded-mini" th:text="${#dates.format(blog.updateTime,'MMMdd')}">May 9</div>
+                        <div class="ui teal basic left pointing label n-padded-mini" th:text="${#dates.format(blog.updateTime,'MM-dd')}">May 9</div>
                     </span>
                         <div class="ui orange basic left pointing label n-padded-mini" th:text="${blog.flag}">Original</div>
                     </a>
