@@ -1,6 +1,6 @@
 package com.wjh.service;
 
-import com.wjh.po.Type;
+import com.wjh.model.Type;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

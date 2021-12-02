@@ -1,6 +1,6 @@
 package com.wjh.dao;
 
-import com.wjh.po.User;
+import com.wjh.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {

@@ -1,6 +1,6 @@
 package com.wjh.web.admin;
 
-import com.wjh.po.Type;
+import com.wjh.model.Type;
 import com.wjh.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;

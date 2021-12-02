@@ -1,6 +1,6 @@
 package com.wjh.dao;
 
-import com.wjh.po.Comment;
+import com.wjh.model.Comment;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,6 +1,6 @@
 package com.wjh.web.admin;
 
-import com.wjh.po.Tag;
+import com.wjh.model.Tag;
 import com.wjh.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;

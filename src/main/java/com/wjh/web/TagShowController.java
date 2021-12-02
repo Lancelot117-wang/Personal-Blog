@@ -1,6 +1,6 @@
 package com.wjh.web;
 
-import com.wjh.po.Tag;
+import com.wjh.model.Tag;
 import com.wjh.service.BlogService;
 import com.wjh.service.TagService;
 import com.wjh.vo.BlogQuery;

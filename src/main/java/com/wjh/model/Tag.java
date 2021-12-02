@@ -1,4 +1,4 @@
-package com.wjh.po;
+package com.wjh.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;

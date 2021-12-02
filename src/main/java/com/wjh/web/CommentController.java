@@ -1,7 +1,7 @@
 package com.wjh.web;
 
-import com.wjh.po.Comment;
-import com.wjh.po.User;
+import com.wjh.model.Comment;
+import com.wjh.model.User;
 import com.wjh.service.BlogService;
 import com.wjh.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,6 +1,4 @@
-package com.wjh.po;
-
-import org.apache.logging.log4j.util.PerformanceSensitive;
+package com.wjh.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;

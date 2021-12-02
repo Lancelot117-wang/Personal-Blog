@@ -1,6 +1,6 @@
 package com.wjh.service;
 
-import com.wjh.po.Comment;
+import com.wjh.model.Comment;
 
 import java.util.List;
 

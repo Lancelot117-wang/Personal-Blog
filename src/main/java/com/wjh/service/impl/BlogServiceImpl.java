@@ -2,8 +2,8 @@ package com.wjh.service.impl;
 
 import com.wjh.exception.NotFoundException;
 import com.wjh.dao.BlogRepository;
-import com.wjh.po.Blog;
-import com.wjh.po.Type;
+import com.wjh.model.Blog;
+import com.wjh.model.Type;
 import com.wjh.service.BlogService;
 import com.wjh.util.MarkdownUtils;
 import com.wjh.util.MyBeanUtils;

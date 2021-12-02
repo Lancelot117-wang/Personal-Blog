@@ -2,7 +2,7 @@ package com.wjh.service.impl;
 
 import com.wjh.exception.NotFoundException;
 import com.wjh.dao.TagRepository;
-import com.wjh.po.Tag;
+import com.wjh.model.Tag;
 import com.wjh.service.TagService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

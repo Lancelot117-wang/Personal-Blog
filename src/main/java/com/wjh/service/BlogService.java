@@ -1,6 +1,6 @@
 package com.wjh.service;
 
-import com.wjh.po.Blog;
+import com.wjh.model.Blog;
 import com.wjh.vo.BlogQuery;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
