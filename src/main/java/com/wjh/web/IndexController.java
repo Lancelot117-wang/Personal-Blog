@@ -1,10 +1,8 @@
 package com.wjh.web;
 
-import com.wjh.NotFoundException;
 import com.wjh.service.BlogService;
 import com.wjh.service.TagService;
 import com.wjh.service.TypeService;
-import com.wjh.vo.BlogQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

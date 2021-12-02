@@ -1,6 +1,6 @@
 package com.wjh.service;
 
-import com.wjh.NotFoundException;
+import com.wjh.exception.NotFoundException;
 import com.wjh.dao.BlogRepository;
 import com.wjh.po.Blog;
 import com.wjh.po.Type;

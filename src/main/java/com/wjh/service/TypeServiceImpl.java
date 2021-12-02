@@ -1,6 +1,6 @@
 package com.wjh.service;
 
-import com.wjh.NotFoundException;
+import com.wjh.exception.NotFoundException;
 import com.wjh.dao.TypeRepository;
 import com.wjh.po.Type;
 import org.springframework.beans.BeanUtils;
@@ -65,7 +65,7 @@ public class TypeServiceImpl implements TypeService {
         Optional<Type> result = typeRepository.findById(id);
         Type t = result.get();
         if (t == null) {
-            throw new NotFoundException("不存在该类型");
+            throw new NotFoundException("Couldn't find expected Type");
         }
         BeanUtils.copyProperties(type,t);
         return typeRepository.save(t);
