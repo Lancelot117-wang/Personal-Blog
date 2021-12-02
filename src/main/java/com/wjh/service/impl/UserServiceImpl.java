@@ -1,6 +1,6 @@
 package com.wjh.service.impl;
 
-import com.wjh.dao.jpa.UserRepository;
+import com.wjh.repository.jpa.UserRepository;
 import com.wjh.model.jpa.User;
 import com.wjh.service.UserService;
 import com.wjh.util.MD5Utils;

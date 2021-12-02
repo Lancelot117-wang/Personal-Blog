@@ -1,7 +1,7 @@
 package com.wjh.service.impl;
 
 import com.wjh.exception.NotFoundException;
-import com.wjh.dao.jpa.TagRepository;
+import com.wjh.repository.jpa.TagRepository;
 import com.wjh.model.jpa.Tag;
 import com.wjh.service.TagService;
 import org.springframework.beans.BeanUtils;

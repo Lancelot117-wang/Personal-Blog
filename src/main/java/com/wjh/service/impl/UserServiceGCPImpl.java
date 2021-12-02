@@ -1,6 +1,6 @@
 package com.wjh.service.impl;
 
-import com.wjh.dao.datastore.UserDatastoreRepository;
+import com.wjh.repository.datastore.UserDatastoreRepository;
 import com.wjh.model.datastore.User;
 import com.wjh.service.UserService;
 import com.wjh.util.MD5Utils;

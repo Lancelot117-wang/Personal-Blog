@@ -1,7 +1,7 @@
 package com.wjh.service.impl;
 
 import com.wjh.exception.NotFoundException;
-import com.wjh.dao.jpa.BlogRepository;
+import com.wjh.repository.jpa.BlogRepository;
 import com.wjh.model.jpa.Blog;
 import com.wjh.model.jpa.Type;
 import com.wjh.service.BlogService;

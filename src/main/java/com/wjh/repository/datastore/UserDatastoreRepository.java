@@ -1,4 +1,4 @@
-package com.wjh.dao.datastore;
+package com.wjh.repository.datastore;
 
 import com.wjh.model.datastore.User;
 import org.springframework.cloud.gcp.data.datastore.repository.DatastoreRepository;

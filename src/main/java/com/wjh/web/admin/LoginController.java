@@ -1,6 +1,6 @@
 package com.wjh.web.admin;
 
-import com.wjh.dao.jpa.UserRepository;
+import com.wjh.repository.jpa.UserRepository;
 import com.wjh.model.jpa.User;
 import com.wjh.service.UserService;
 import com.wjh.util.MD5Utils;
@@ -21,6 +21,7 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
+    //need to add DAO layer to distinguish JPA and Datastore
     @Autowired
     private UserRepository userRepository;
 

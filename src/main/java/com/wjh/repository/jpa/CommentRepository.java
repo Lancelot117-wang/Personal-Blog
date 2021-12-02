@@ -1,4 +1,4 @@
-package com.wjh.dao.jpa;
+package com.wjh.repository.jpa;
 
 import com.wjh.model.jpa.Comment;
 import org.springframework.data.domain.Sort;

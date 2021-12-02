@@ -1,6 +1,6 @@
 package com.wjh.service.impl;
 
-import com.wjh.dao.jpa.CommentRepository;
+import com.wjh.repository.jpa.CommentRepository;
 import com.wjh.model.jpa.Comment;
 import com.wjh.service.CommentService;
 import org.springframework.beans.BeanUtils;

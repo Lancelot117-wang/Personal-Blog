@@ -1,7 +1,7 @@
 package com.wjh.service.impl;
 
 import com.wjh.exception.NotFoundException;
-import com.wjh.dao.jpa.TypeRepository;
+import com.wjh.repository.jpa.TypeRepository;
 import com.wjh.model.jpa.Type;
 import com.wjh.service.TypeService;
 import org.springframework.beans.BeanUtils;
