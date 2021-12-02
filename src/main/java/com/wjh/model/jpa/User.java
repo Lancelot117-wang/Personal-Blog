@@ -1,4 +1,4 @@
-package com.wjh.model;
+package com.wjh.model.jpa;
 
 import javax.persistence.*;
 import java.util.ArrayList;

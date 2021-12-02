@@ -1,6 +1,6 @@
 package com.wjh.service;
 
-import com.wjh.model.Tag;
+import com.wjh.model.jpa.Tag;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

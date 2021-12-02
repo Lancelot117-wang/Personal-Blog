@@ -1,7 +1,7 @@
 package com.wjh.web.admin;
 
-import com.wjh.model.Blog;
-import com.wjh.model.User;
+import com.wjh.model.jpa.Blog;
+import com.wjh.model.jpa.User;
 import com.wjh.service.BlogService;
 import com.wjh.service.TagService;
 import com.wjh.service.TypeService;

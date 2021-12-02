@@ -1,6 +1,6 @@
 package com.wjh.service;
 
-import com.wjh.model.User;
+import com.wjh.model.jpa.User;
 
 public interface UserService {
 

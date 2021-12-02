@@ -1,6 +1,6 @@
 package com.wjh.dao;
 
-import com.wjh.model.Blog;
+import com.wjh.model.jpa.Blog;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

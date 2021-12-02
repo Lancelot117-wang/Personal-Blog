@@ -1,6 +1,6 @@
 package com.wjh.web;
 
-import com.wjh.model.Type;
+import com.wjh.model.jpa.Type;
 import com.wjh.service.BlogService;
 import com.wjh.service.TypeService;
 import com.wjh.vo.BlogQuery;

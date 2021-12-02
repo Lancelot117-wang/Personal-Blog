@@ -1,4 +1,4 @@
-package com.wjh.model;
+package com.wjh.model.jpa;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -6,19 +6,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "t_type")
-public class Type {
+@Table(name = "t_tag")
+public class Tag {
 
     @Id
     @GeneratedValue
     private Long id;
-    @NotBlank(message = "Group name can't be blank")
+    @NotBlank(message = "Tag can't be blank")
     private String name;
 
-    @OneToMany(mappedBy = "type")
+    @ManyToMany(mappedBy = "tags")
     private List<Blog> blogs = new ArrayList<>();
 
-    public Type() {
+    public Tag() {
 
     }
 
@@ -48,7 +48,7 @@ public class Type {
 
     @Override
     public String toString() {
-        return "Type{" +
+        return "Tag{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
