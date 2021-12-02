@@ -7,28 +7,20 @@ import org.springframework.cloud.gcp.data.datastore.core.mapping.Entity;
 import org.springframework.cloud.gcp.data.datastore.core.mapping.Field;
 import org.springframework.data.annotation.Id;
 
+import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @NoArgsConstructor
 @Data
-@Entity(name = "user")
-public class User {
+@Entity
+public class Type {
 
     @Id
     @Field(name = "id")
     private Long id;
-    private String nickname;
-    private String username;
-    private String password;
-    private String email;
-    private String avatar;
-    private Integer type;
-
-    private Date createTime;
-
-    private Date updateTime;
+    @NotBlank(message = "Group name can't be blank")
+    private String name;
 
     @Descendants
     private List<Blog> blogs = new ArrayList<>();

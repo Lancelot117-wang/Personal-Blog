@@ -13,23 +13,25 @@ import java.util.List;
 
 @NoArgsConstructor
 @Data
-@Entity(name = "user")
-public class User {
+@Entity
+public class Comment {
 
     @Id
     @Field(name = "id")
     private Long id;
     private String nickname;
-    private String username;
-    private String password;
     private String email;
+    private String content;
     private String avatar;
-    private Integer type;
 
     private Date createTime;
 
-    private Date updateTime;
+    private Long blogForeignId;
 
     @Descendants
-    private List<Blog> blogs = new ArrayList<>();
+    private List<Comment> replyComments = new ArrayList<>();
+
+    private Long parentCommentForeignId;
+
+    private boolean adminComment;
 }
