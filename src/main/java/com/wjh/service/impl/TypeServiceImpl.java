@@ -1,8 +1,9 @@
-package com.wjh.service;
+package com.wjh.service.impl;
 
 import com.wjh.exception.NotFoundException;
 import com.wjh.dao.TypeRepository;
 import com.wjh.po.Type;
+import com.wjh.service.TypeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

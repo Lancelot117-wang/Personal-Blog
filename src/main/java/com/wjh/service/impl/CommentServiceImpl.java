@@ -1,7 +1,8 @@
-package com.wjh.service;
+package com.wjh.service.impl;
 
 import com.wjh.dao.CommentRepository;
 import com.wjh.po.Comment;
+import com.wjh.service.CommentService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
