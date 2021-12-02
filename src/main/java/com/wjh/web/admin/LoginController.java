@@ -1,6 +1,6 @@
 package com.wjh.web.admin;
 
-import com.wjh.dao.UserRepository;
+import com.wjh.dao.jpa.UserRepository;
 import com.wjh.model.jpa.User;
 import com.wjh.service.UserService;
 import com.wjh.util.MD5Utils;

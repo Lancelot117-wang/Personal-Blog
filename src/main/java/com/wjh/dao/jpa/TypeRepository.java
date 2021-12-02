@@ -1,4 +1,4 @@
-package com.wjh.dao;
+package com.wjh.dao.jpa;
 
 import com.wjh.model.jpa.Type;
 import org.springframework.data.domain.Pageable;
