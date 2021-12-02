@@ -4,4 +4,6 @@ import com.wjh.model.datastore.User;
 import org.springframework.cloud.gcp.data.datastore.repository.DatastoreRepository;
 
 public interface UserDatastoreRepository extends DatastoreRepository<User, Long> {
+
+    public User findByUsernameAndPassword(String username, String password);
 }

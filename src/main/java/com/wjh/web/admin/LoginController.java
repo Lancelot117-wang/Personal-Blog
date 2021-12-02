@@ -34,7 +34,7 @@ public class LoginController {
                         @RequestParam String password,
                         HttpSession session,
                         RedirectAttributes attributes) {
-        User user = userService.checkUser(username, password);
+        com.wjh.dto.User user = userService.checkUser(username, password);
         if(user != null) {
             user.setPassword(null);
             session.setAttribute("user", user);
