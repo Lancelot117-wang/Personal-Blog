@@ -10,7 +10,7 @@ import java.util.List;
 
 @NoArgsConstructor
 @Data
-public class User {
+public class UserDTO {
 
     private Long id;
     private String nickname;

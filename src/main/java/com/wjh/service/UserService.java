@@ -1,9 +1,9 @@
 package com.wjh.service;
 
-import com.wjh.dto.User;
+import com.wjh.dto.UserDTO;
 
 public interface UserService {
 
-    User checkUser(String username, String password);
+    UserDTO checkUser(String username, String password);
 
 }

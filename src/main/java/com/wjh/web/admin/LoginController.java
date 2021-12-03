@@ -1,7 +1,7 @@
 package com.wjh.web.admin;
 
-import com.wjh.repository.jpa.UserRepository;
-import com.wjh.model.jpa.User;
+import com.wjh.dao.UserDAO;
+import com.wjh.dto.UserDTO;
 import com.wjh.service.UserService;
 import com.wjh.util.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,9 +21,8 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    //need to add DAO layer to distinguish JPA and Datastore
     @Autowired
-    private UserRepository userRepository;
+    private UserDAO userDAO;
 
     @GetMapping
     public String loginPage() {
@@ -35,7 +34,7 @@ public class LoginController {
                         @RequestParam String password,
                         HttpSession session,
                         RedirectAttributes attributes) {
-        com.wjh.dto.User user = userService.checkUser(username, password);
+        UserDTO user = userService.checkUser(username, password);
         if(user != null) {
             user.setPassword(null);
             session.setAttribute("user", user);
@@ -55,9 +54,9 @@ public class LoginController {
 
     @PostMapping("/register")
     public void register(){
-        User newUser = new User();
+        UserDTO newUser = new UserDTO();
         newUser.setUsername("junhanwang");
         newUser.setPassword(MD5Utils.code("125690"));
-        userRepository.save(newUser);
+        userDAO.save(newUser);
     }
 }

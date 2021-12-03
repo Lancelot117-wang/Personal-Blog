@@ -1,5 +1,7 @@
 package com.wjh.service.impl;
 
+import com.wjh.dao.UserDAO;
+import com.wjh.dto.UserDTO;
 import com.wjh.repository.jpa.UserRepository;
 import com.wjh.model.jpa.User;
 import com.wjh.service.UserService;
@@ -9,18 +11,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Service;
 
-@ConditionalOnProperty(name = "gcp.datastore.enabled", havingValue = "false")
 @Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserDAO userDAO;
 
     @Override
-    public com.wjh.dto.User checkUser(String username, String password) {
-        User user = userRepository.findByUsernameAndPassword(username, MD5Utils.code(password));
-        com.wjh.dto.User userDTO = new com.wjh.dto.User();
-        BeanUtils.copyProperties(user, userDTO);
+    public UserDTO checkUser(String username, String password) {
+        UserDTO userDTO = userDAO.findByUsernameAndPassword(username, MD5Utils.code(password));
         return userDTO;
     }
 }
