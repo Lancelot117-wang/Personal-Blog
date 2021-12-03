@@ -9,6 +9,7 @@ import com.wjh.repository.datastore.TypeDatastoreRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
@@ -49,8 +50,8 @@ public class TypeDAOGCPImpl implements TypeDAO {
 
     @Override
     public PageDTO<TypeDTO> listType(Pageable pageable) {
-        int size = pageable.getPageSize();
-        Iterable<Type> typeList = typeDatastoreRepository.findTop(size);
+        Page<Type> typePage = typeDatastoreRepository.findAll(pageable);
+        List<Type> typeList = typePage.getContent();
         List<TypeDTO> typeDTOList = new ArrayList<>();
         typeList.forEach(type -> {
             TypeDTO typeDTO = new TypeDTO();
@@ -59,12 +60,10 @@ public class TypeDAOGCPImpl implements TypeDAO {
         });
         PageDTO<TypeDTO> pageDTO = new PageDTO<>();
         pageDTO.setContent(typeDTOList);
-        // TO DO: correct pageDTO with proper limit and offset
-        // TO DO: add findPage method to TypeDatastoreRepository
-        pageDTO.setTotalPages(1);
-        pageDTO.setNumber(1);
-        pageDTO.setFirst(true);
-        pageDTO.setLast(true);
+        pageDTO.setTotalPages(typePage.getTotalPages());
+        pageDTO.setNumber(typePage.getNumber());
+        pageDTO.setFirst(typePage.isFirst());
+        pageDTO.setLast(typePage.isLast());
         return pageDTO;
     }
 
