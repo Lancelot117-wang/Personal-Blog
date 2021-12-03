@@ -21,9 +21,6 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private UserDAO userDAO;
-
     @GetMapping
     public String loginPage() {
         return "admin/login";
@@ -57,6 +54,6 @@ public class LoginController {
         UserDTO newUser = new UserDTO();
         newUser.setUsername("junhanwang");
         newUser.setPassword(MD5Utils.code("125690"));
-        userDAO.save(newUser);
+        userService.register(newUser);
     }
 }

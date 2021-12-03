@@ -22,4 +22,9 @@ public class UserServiceImpl implements UserService {
         UserDTO userDTO = userDAO.findByUsernameAndPassword(username, MD5Utils.code(password));
         return userDTO;
     }
+
+    @Override
+    public void register(UserDTO userDTO){
+        userDAO.save(userDTO);
+    }
 }
