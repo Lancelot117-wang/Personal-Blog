@@ -1,4 +1,4 @@
-package com.wjh.service;
+package com.wjh.dao;
 
 import com.wjh.dto.PageDTO;
 import com.wjh.dto.TypeDTO;
@@ -6,13 +6,13 @@ import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
-public interface TypeService {
+public interface TypeDAO {
 
-    TypeDTO saveType(TypeDTO type);
+    TypeDTO saveType(TypeDTO typeDTO);
 
-    TypeDTO getType(Long id);
+    TypeDTO findTypeById(Long id);
 
-    TypeDTO getTypeByName(String name);
+    TypeDTO findTypeByName(String name);
 
     PageDTO<TypeDTO> listType(Pageable pageable);
 
@@ -20,7 +20,7 @@ public interface TypeService {
 
     List<TypeDTO> listTypeTop(Integer size);
 
-    TypeDTO updateType(Long id, TypeDTO type);
+    TypeDTO updateTypeById(Long id, TypeDTO typeDTO);
 
-    void deleteType(Long id);
+    void deleteById(Long id);
 }

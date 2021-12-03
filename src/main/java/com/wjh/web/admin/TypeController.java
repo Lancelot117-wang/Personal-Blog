@@ -1,6 +1,6 @@
 package com.wjh.web.admin;
 
-import com.wjh.model.jpa.Type;
+import com.wjh.dto.TypeDTO;
 import com.wjh.service.TypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -35,7 +35,7 @@ public class TypeController {
 
     @GetMapping("/types/input")
     public String input(Model model) {
-        model.addAttribute("type", new Type());
+        model.addAttribute("type", new TypeDTO());
         return "admin/group-add";
     }
 
@@ -46,15 +46,15 @@ public class TypeController {
     }
 
     @PostMapping("/types")
-    public String post(@Valid Type type, BindingResult result, RedirectAttributes attributes){
-        Type type0 = typeService.getTypeByName(type.getName());
+    public String post(@Valid TypeDTO type, BindingResult result, RedirectAttributes attributes){
+        TypeDTO type0 = typeService.getTypeByName(type.getName());
         if(type0 != null){
             result.rejectValue("name", "nameError", "Existing type can't be added again");
         }
         if(result.hasErrors()) {
             return "admin/group-add";
         }
-        Type t = typeService.saveType(type);
+        TypeDTO t = typeService.saveType(type);
         if(t == null){
             attributes.addFlashAttribute("message", "Operation Failed");
         }
@@ -65,15 +65,15 @@ public class TypeController {
     }
 
     @PostMapping("/types/{id}")
-    public String editPost(@Valid Type type, BindingResult result,@PathVariable Long id, RedirectAttributes attributes){
-        Type type0 = typeService.getTypeByName(type.getName());
+    public String editPost(@Valid TypeDTO type, BindingResult result,@PathVariable Long id, RedirectAttributes attributes){
+        TypeDTO type0 = typeService.getTypeByName(type.getName());
         if(type0 != null){
             result.rejectValue("name", "nameError", "Existing type can't be added again");
         }
         if(result.hasErrors()) {
             return "admin/group-add";
         }
-        Type t = typeService.updateType(id, type);
+        TypeDTO t = typeService.updateType(id, type);
         if(t == null){
             attributes.addFlashAttribute("message", "Operation Failed");
         }

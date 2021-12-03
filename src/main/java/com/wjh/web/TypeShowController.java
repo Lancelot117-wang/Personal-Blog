@@ -1,6 +1,6 @@
 package com.wjh.web;
 
-import com.wjh.model.jpa.Type;
+import com.wjh.dto.TypeDTO;
 import com.wjh.service.BlogService;
 import com.wjh.service.TypeService;
 import com.wjh.vo.BlogQuery;
@@ -27,7 +27,7 @@ public class TypeShowController {
     @GetMapping("/types/{id}")
     public String types(@PageableDefault(size = 2, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable,
                         Model model, @PathVariable Long id) {
-        List<Type> types = typeService.listTypeTop(100);
+        List<TypeDTO> types = typeService.listTypeTop(100);
         if(id == -1) {
             id = types.get(0).getId();
         }
