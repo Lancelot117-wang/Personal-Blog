@@ -1,6 +1,6 @@
 package com.wjh.web;
 
-import com.wjh.model.jpa.Tag;
+import com.wjh.dto.TagDTO;
 import com.wjh.service.BlogService;
 import com.wjh.service.TagService;
 import com.wjh.vo.BlogQuery;
@@ -27,7 +27,7 @@ public class TagShowController {
     @GetMapping("/tags/{id}")
     public String tags(@PageableDefault(size = 2, sort = {"updateTime"}, direction = Sort.Direction.DESC) Pageable pageable,
                         Model model, @PathVariable Long id) {
-        List<Tag> tags = tagService.listTagTop(100);
+        List<TagDTO> tags = tagService.listTagTop(100);
         if(id == -1) {
             id = tags.get(0).getId();
         }

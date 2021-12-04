@@ -78,7 +78,7 @@ public class BlogController {
         blog.setUser((User) session.getAttribute("user"));
         // Temporarily disable blog initialization
         //blog.setType(typeService.getType(blog.getType().getId()));
-        blog.setTags(tagService.listTag(blog.getTagIds()));
+        //blog.setTags(tagService.listTag(blog.getTagIds()));
         Blog b;
 
         if(true) {

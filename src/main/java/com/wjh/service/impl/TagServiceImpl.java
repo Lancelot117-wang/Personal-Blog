@@ -1,67 +1,60 @@
 package com.wjh.service.impl;
 
-import com.wjh.exception.NotFoundException;
-import com.wjh.repository.jpa.TagRepository;
-import com.wjh.model.jpa.Tag;
+import com.wjh.dao.TagDAO;
+import com.wjh.dto.PageDTO;
+import com.wjh.dto.TagDTO;
 import com.wjh.service.TagService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TagServiceImpl implements TagService {
 
     @Autowired
-    private TagRepository tagRepository;
+    private TagDAO tagDAO;
 
     @Transactional
     @Override
-    public Tag saveTag(Tag tag) {
-        return tagRepository.save(tag);
-    }
-
-    @Transactional
-    @Override
-    public Tag getTag(Long id) {
-        return tagRepository.findById(id).get();
+    public TagDTO saveTag(TagDTO tagDTO) {
+        return tagDAO.saveTag(tagDTO);
     }
 
     @Transactional
     @Override
-    public Tag getTagByName(String name) {
-        return tagRepository.findByName(name);
+    public TagDTO getTag(Long id) {
+        return tagDAO.findTagById(id);
     }
 
     @Transactional
     @Override
-    public Page<Tag> listTag(Pageable pageable) {
-        return tagRepository.findAll(pageable);
+    public TagDTO getTagByName(String name) {
+        return tagDAO.findTagByName(name);
+    }
+
+    @Transactional
+    @Override
+    public PageDTO<TagDTO> listTag(Pageable pageable) {
+        return tagDAO.listTag(pageable);
     }
 
     @Override
-    public List<Tag> listTag() {
-        return tagRepository.findAll();
+    public List<TagDTO> listTag() {
+        return tagDAO.listTag();
     }
 
     @Override
-    public List<Tag> listTagTop(Integer size) {
-        Sort sort = Sort.by(Sort.Direction.DESC,"blogs.size");
-        Pageable pageable = PageRequest.of(0,size,sort);
-        return tagRepository.findTop(pageable);
+    public List<TagDTO> listTagTop(Integer size) {
+        return tagDAO.listTagTop(size);
     }
 
     @Override
-    public List<Tag> listTag(String ids) {
-        return tagRepository.findAllById(convertToList(ids));
+    public List<TagDTO> listTag(String ids) {
+        return tagDAO.findAllById(convertToList(ids));
     }
 
     private List<Long> convertToList(String ids) {
@@ -69,7 +62,7 @@ public class TagServiceImpl implements TagService {
         if(!"".equals(ids) && ids != null){
             String[] idarray = ids.split(",");
             for(int i=0; i< idarray.length; i++){
-                list.add(new Long(idarray[i]));
+                list.add(Long.valueOf(idarray[i]));
             }
         }
         return list;
@@ -77,19 +70,13 @@ public class TagServiceImpl implements TagService {
 
     @Transactional
     @Override
-    public Tag updateTag(Long id, Tag tag) {
-        Optional<Tag> result = tagRepository.findById(id);
-        Tag t = result.get();
-        if (t == null) {
-            throw new NotFoundException("Couldn't find expected Tag");
-        }
-        BeanUtils.copyProperties(tag,t);
-        return tagRepository.save(t);
+    public TagDTO updateTag(Long id, TagDTO tagDTO) {
+        return tagDAO.updateTagById(id, tagDTO);
     }
 
     @Transactional
     @Override
     public void deleteTag(Long id) {
-        tagRepository.deleteById(id);
+        tagDAO.deleteById(id);
     }
 }

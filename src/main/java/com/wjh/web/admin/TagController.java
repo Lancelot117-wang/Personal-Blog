@@ -1,5 +1,6 @@
 package com.wjh.web.admin;
 
+import com.wjh.dto.TagDTO;
 import com.wjh.model.jpa.Tag;
 import com.wjh.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,15 +47,15 @@ public class TagController {
     }
 
     @PostMapping("/tags")
-    public String post(@Valid Tag tag, BindingResult result, RedirectAttributes attributes){
-        Tag tag0 = tagService.getTagByName(tag.getName());
+    public String post(@Valid TagDTO tag, BindingResult result, RedirectAttributes attributes){
+        TagDTO tag0 = tagService.getTagByName(tag.getName());
         if(tag0 != null){
             result.rejectValue("name", "nameError", "Existing tag can't be added again");
         }
         if(result.hasErrors()) {
             return "admin/tag-add";
         }
-        Tag t = tagService.saveTag(tag);
+        TagDTO t = tagService.saveTag(tag);
         if(t == null){
             attributes.addFlashAttribute("message", "Operation Failed");
         }
@@ -65,15 +66,15 @@ public class TagController {
     }
 
     @PostMapping("/tags/{id}")
-    public String editPost(@Valid Tag tag, BindingResult result,@PathVariable Long id, RedirectAttributes attributes){
-        Tag tag0 = tagService.getTagByName(tag.getName());
+    public String editPost(@Valid TagDTO tag, BindingResult result,@PathVariable Long id, RedirectAttributes attributes){
+        TagDTO tag0 = tagService.getTagByName(tag.getName());
         if(tag0 != null){
             result.rejectValue("name", "nameError", "Existing tag can't be added again");
         }
         if(result.hasErrors()) {
             return "admin/tag-add";
         }
-        Tag t = tagService.updateTag(id, tag);
+        TagDTO t = tagService.updateTag(id, tag);
         if(t == null){
             attributes.addFlashAttribute("message", "Operation Failed");
         }

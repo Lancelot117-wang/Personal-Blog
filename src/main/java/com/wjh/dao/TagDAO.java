@@ -1,4 +1,4 @@
-package com.wjh.service;
+package com.wjh.dao;
 
 import com.wjh.dto.PageDTO;
 import com.wjh.dto.TagDTO;
@@ -6,13 +6,13 @@ import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
-public interface TagService {
+public interface TagDAO {
 
     TagDTO saveTag(TagDTO tagDTO);
 
-    TagDTO getTag(Long id);
+    TagDTO findTagById(Long id);
 
-    TagDTO getTagByName(String name);
+    TagDTO findTagByName(String name);
 
     PageDTO<TagDTO> listTag(Pageable pageable);
 
@@ -20,9 +20,9 @@ public interface TagService {
 
     List<TagDTO> listTagTop(Integer size);
 
-    List<TagDTO> listTag(String ids);
+    List<TagDTO> findAllById(List<Long> idList);
 
-    TagDTO updateTag(Long id, TagDTO tagDTO);
+    TagDTO updateTagById(Long id, TagDTO tagDTO);
 
-    void deleteTag(Long id);
+    void deleteById(Long id);
 }
