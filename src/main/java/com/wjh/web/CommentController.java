@@ -35,7 +35,8 @@ public class CommentController {
     @PostMapping("/comments")
     public String post(Comment comment, HttpSession session) {
         Long blogId = comment.getBlog().getId();
-        comment.setBlog(blogService.getBlog(blogId));
+        // temporarily disable comment initialization
+        //comment.setBlog(blogService.getBlog(blogId));
         User user = (User) session.getAttribute("user");
         if(user != null){
             comment.setAvatar(user.getAvatar());

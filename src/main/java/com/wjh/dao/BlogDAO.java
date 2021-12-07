@@ -1,4 +1,4 @@
-package com.wjh.service;
+package com.wjh.dao;
 
 import com.wjh.dto.BlogDTO;
 import com.wjh.dto.PageDTO;
@@ -8,11 +8,13 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 import java.util.Map;
 
-public interface BlogService {
+public interface BlogDAO {
 
-    BlogDTO getBlog(Long id);
+    BlogDTO saveBlog(BlogDTO blogDTO);
 
-    BlogDTO getAndConvert(Long id);
+    BlogDTO findBlogById(Long id);
+
+    BlogDTO getHTMLContent(Long id);
 
     PageDTO<BlogDTO> listBlog(Pageable pageable, BlogQuery blog);
 
@@ -28,9 +30,7 @@ public interface BlogService {
 
     Long countBlog();
 
-    BlogDTO saveBlog(BlogDTO blog);
-
-    BlogDTO updateBlog(Long id, BlogDTO blog);
+    BlogDTO updateBlog(Long id, BlogDTO blogDTO);
 
     void deleteBlog(Long id);
 }

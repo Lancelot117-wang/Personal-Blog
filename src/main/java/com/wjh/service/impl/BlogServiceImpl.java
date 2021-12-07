@@ -1,146 +1,82 @@
 package com.wjh.service.impl;
 
-import com.wjh.exception.NotFoundException;
-import com.wjh.repository.jpa.BlogRepository;
-import com.wjh.model.jpa.Blog;
-import com.wjh.model.jpa.Type;
+import com.wjh.dao.BlogDAO;
+import com.wjh.dto.BlogDTO;
+import com.wjh.dto.PageDTO;
 import com.wjh.service.BlogService;
-import com.wjh.util.MarkdownUtils;
-import com.wjh.util.MyBeanUtils;
 import com.wjh.vo.BlogQuery;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.criteria.*;
 import java.util.*;
 
 @Service
 public class BlogServiceImpl implements BlogService {
 
     @Autowired
-    private BlogRepository blogRepository;
+    private BlogDAO blogDAO;
 
     @Override
-    public Blog getBlog(Long id) {
-        return blogRepository.findById(id).get();
+    public BlogDTO getBlog(Long id) {
+        return blogDAO.findBlogById(id);
     }
 
     @Transactional
     @Override
-    public Blog getAndConvert(Long id) {
-        Blog blog = blogRepository.findById(id).get();
-        if(blog == null) {
-            throw new NotFoundException("Invalid Blog");
-        }
-        Blog b = new Blog();
-        BeanUtils.copyProperties(blog, b);
-        String content = b.getContent();
-        b.setContent(MarkdownUtils.markdownToHtmlExtensions(content));
-
-        blogRepository.updateViews(id);
-
-        return b;
+    public BlogDTO getAndConvert(Long id) {
+        return blogDAO.getHTMLContent(id);
     }
 
     @Override
-    public Page<Blog> listBlog(Pageable pageable, BlogQuery blog) {
-        return blogRepository.findAll(new Specification<Blog>() {
-            @Override
-            public Predicate toPredicate(Root<Blog> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
-                List<Predicate> predicates = new ArrayList<>();
-                if(!"".equals(blog.getTitle()) && blog.getTitle() != null) {
-                    predicates.add(cb.like(root.<String>get("title"), "%"+blog.getTitle()));
-                }
-                if(blog.getTypeId() != null) {
-                    predicates.add(cb.equal(root.<Type>get("type").get("id"), blog.getTypeId()));
-                }
-                if(blog.isRecommend()) {
-                    predicates.add(cb.equal(root.<Boolean>get("recommend"), blog.isRecommend()));
-                }
-                cq.where(predicates.toArray(new Predicate[predicates.size()]));
-                return null;
-            }
-        }, pageable);
+    public PageDTO<BlogDTO> listBlog(Pageable pageable, BlogQuery blog) {
+        return blogDAO.listBlog(pageable, blog);
     }
 
     @Override
-    public Page<Blog> listBlog(Pageable pageable) {
-        return blogRepository.findAll(pageable);
+    public PageDTO<BlogDTO> listBlog(Pageable pageable) {
+        return blogDAO.listBlog(pageable);
     }
 
     @Override
-    public Page<Blog> listBlog(Pageable pageable, Long tagId) {
-        return blogRepository.findAll(new Specification<Blog>() {
-            @Override
-            public Predicate toPredicate(Root<Blog> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
-                Join join = root.join("tags");
-                return cb.equal(join.get("id"),tagId);
-            }
-        }, pageable);
+    public PageDTO<BlogDTO> listBlog(Pageable pageable, Long tagId) {
+        return blogDAO.listBlog(pageable, tagId);
     }
 
     @Override
-    public Page<Blog> listBlog(String query, Pageable pageable) {
-        return blogRepository.findByQuery(query, pageable);
+    public PageDTO<BlogDTO> listBlog(String query, Pageable pageable) {
+        return blogDAO.listBlog(query, pageable);
     }
 
     @Override
-    public List<Blog> listRecommendBlogTop(Integer size) {
-        Sort sort = Sort.by(Sort.Direction.DESC,"updateTime");
-        Pageable pageable = PageRequest.of(0,size,sort);
-        return blogRepository.findTop(pageable);
+    public List<BlogDTO> listRecommendBlogTop(Integer size) {
+        return blogDAO.listRecommendBlogTop(size);
     }
 
     @Override
-    public Map<String, List<Blog>> archiveBlog() {
-        List<String> years = blogRepository.findGroupYear();
-        Map<String, List<Blog>> map = new HashMap<>();
-        for(String year: years) {
-            map.put(year,blogRepository.findByYear(year));
-        }
-        return map;
+    public Map<String, List<BlogDTO>> archiveBlog() {
+        return blogDAO.archiveBlog();
     }
 
     @Override
     public Long countBlog() {
-        return blogRepository.count();
+        return blogDAO.countBlog();
     }
 
     @Transactional
     @Override
-    public Blog saveBlog(Blog blog) {
-        if(blog.getId() == null){
-            blog.setCreateTime(new Date());
-            blog.setUpdateTime(new Date());
-            blog.setViews(0);
-        } else {
-            blog.setUpdateTime(new Date());
-        }
-
-        return blogRepository.save(blog);
+    public BlogDTO saveBlog(BlogDTO blogDTO) {
+        return blogDAO.saveBlog(blogDTO);
     }
 
     @Override
-    public Blog updateBlog(Long id, Blog blog) {
-        Blog b = blogRepository.findById(id).get();
-        if(b == null){
-            throw new NotFoundException("Blog doesn't exist");
-        }
-        BeanUtils.copyProperties(blog,b, MyBeanUtils.getNullPropertyNames(blog));
-        b.setUpdateTime(new Date());
-        return blogRepository.save(b);
-
+    public BlogDTO updateBlog(Long id, BlogDTO blogDTO) {
+        return blogDAO.updateBlog(id, blogDTO);
     }
 
     @Override
     public void deleteBlog(Long id) {
-        blogRepository.deleteById(id);
+        blogDAO.deleteBlog(id);
     }
 }
