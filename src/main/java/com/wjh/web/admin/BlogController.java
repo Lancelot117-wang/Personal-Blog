@@ -1,7 +1,7 @@
 package com.wjh.web.admin;
 
-import com.wjh.model.jpa.Blog;
-import com.wjh.model.jpa.User;
+import com.wjh.dto.BlogDTO;
+import com.wjh.dto.UserDTO;
 import com.wjh.service.BlogService;
 import com.wjh.service.TagService;
 import com.wjh.service.TypeService;
@@ -55,7 +55,7 @@ public class BlogController {
     @GetMapping("/blogs/input")
     public String input(Model model) {
         setTypeAndTag(model);
-        model.addAttribute("blog", new Blog());
+        model.addAttribute("blog", new BlogDTO());
         return INPUT;
     }
 
@@ -67,19 +67,18 @@ public class BlogController {
     @GetMapping("/blogs/{id}/input")
     public String editInput(@PathVariable Long id, Model model) {
         setTypeAndTag(model);
-        Blog blog = blogService.getBlog(id);
+        BlogDTO blog = blogService.getBlog(id);
         blog.init();
         model.addAttribute("blog", blog);
         return INPUT;
     }
 
     @PostMapping("/blogs")
-    public String post(Blog blog, RedirectAttributes attributes, HttpSession session){
-        blog.setUser((User) session.getAttribute("user"));
-        // Temporarily disable blog initialization
-        //blog.setType(typeService.getType(blog.getType().getId()));
-        //blog.setTags(tagService.listTag(blog.getTagIds()));
-        Blog b;
+    public String post(BlogDTO blog, RedirectAttributes attributes, HttpSession session){
+        blog.setUser((UserDTO) session.getAttribute("user"));
+        blog.setType(typeService.getType(blog.getType().getId()));
+        blog.setTags(tagService.listTag(blog.getTagIds()));
+        BlogDTO b;
 
         if(true) {
             b =  blogService.saveBlog(blog);
